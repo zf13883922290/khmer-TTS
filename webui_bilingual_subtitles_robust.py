@@ -16,7 +16,6 @@ import sys
 import json
 import tempfile
 import zipfile
-import subprocess
 import time
 from pathlib import Path
 
@@ -24,6 +23,10 @@ import numpy as np
 import gradio as gr
 import torch
 import requests
+from transformers import VitsModel, AutoTokenizer
+import webrtcvad
+import librosa
+import soundfile as sf
 from transformers import VitsModel, AutoTokenizer
 
 # ---------- 自动安装缺失依赖 ----------
