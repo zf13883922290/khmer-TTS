@@ -491,4 +491,6 @@ with gr.Blocks(title="高棉语TTS + VAD对齐 (Whisper微调数据)", theme=gr.
     )
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7899, quiet=False)
+    # 使用环境变量 PORT（Streamlit Cloud 会自动设置），否则默认 7860
+    port = int(os.environ.get("PORT", 7860))
+    demo.launch(server_name="0.0.0.0", server_port=port, quiet=False)
