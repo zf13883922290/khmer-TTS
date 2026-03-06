@@ -27,6 +27,11 @@ from transformers import VitsModel, AutoTokenizer
 import webrtcvad
 import librosa
 import soundfile as sf
+# 在文件顶部，import 语句之后、其他导入之前添加
+try:
+    import pkg_resources
+except ImportError:
+    raise ImportError("pkg_resources not found. Please ensure setuptools is installed.")
 from transformers import VitsModel, AutoTokenizer
 
 # ---------- 自动安装缺失依赖 ----------
